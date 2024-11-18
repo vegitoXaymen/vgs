@@ -1,0 +1,302 @@
+/* إعدادات عامة */
+body {
+    font-family: "Cairo", Arial, sans-serif; /* خط عصري مناسب للعربية */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border: none;
+    direction: rtl; /* دعم اللغة العربية */
+    background: linear-gradient(135deg, #a201ff, #0206ff); /* خلفية متدرجة */
+    animation: backgroundAnimation 10s ease-in-out infinite; /* تأثير حركة للخلفية */
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* تأثير حركة الخلفية */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* عنوان الصفحة */
+h1 {
+    margin: 20px 0;
+    color: #fff;
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* تأثير ظلال */
+    animation: fadeIn 2s ease-in-out;
+}
+h2 {
+    margin: 20px 0;
+    color: #fff;
+    font-size: 2.0rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* تأثير ظلال */
+    animation: fadeIn 2s ease-in-out;
+    animation: glow 2s infinite alternate; /* تأثير الإشعاع */
+    transform: translateY(0); /* الموقع الابتدائي */
+    transition: transform 0.3s ease; /* تأثير الحركة عند التفاعل */
+}
+h2:hover {
+    transform: translateY(-10px); /* رفع بسيط عند التمرير */
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7), 
+}
+
+/* تأثير الظهور التدريجي */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* حاوية المقالات */
+.articles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 2s ease-in-out;
+}
+.article {
+    background: linear-gradient(#00e1ff,#ff0281);
+    border-radius: 15px;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 2s ease-in-out;
+}
+.article:hover{
+    transform: translateY(-10px); /* رفع بسيط عند التمرير */
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7), 
+                 0 0 25px #00e1ff, 
+                 0 0 35px #ff0281; /* زيادة الإشعاع */
+}
+
+
+.article-title {
+        font-family: 'Arial', sans-serif; /* استخدام خط عصري */
+        font-size: 1.75rem; /* حجم الخط كبير */
+        font-weight: 700; /* جعل الخط عريض */
+        color: #333; /* لون النص الأساسي */
+        text-align: center; /* محاذاة النص إلى المنتصف */
+        letter-spacing: 1px; /* تباعد بين الأحرف */
+        line-height: 1.4; /* ارتفاع السطر */
+        position: relative; /* تعيين الموقع النسبي */
+        padding: 10px 0; /* إضافة مساحة حول النص */
+        background: linear-gradient(135deg, #70837e, #101313); /* تدرج لوني خلف النص */
+        -webkit-background-clip: text; /* تطبيق التدرج على النص فقط */
+        color: transparent; /* جعل لون النص شفافًا ليظهر التدرج */
+        transition: all 0.4s ease-in-out; /* تأثير انتقالي ناعم */
+}
+.article-title:hover {
+    color: #000000; /* تغيير لون النص عند التمرير */
+    transform: scale(1.07); /* تكبير النص عند التمرير */
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4); /* إضافة تأثير ظل عند التمرير */
+}
+.article-title span {
+    font-size: 1.2rem;
+    color: #feb47b; /* تدرج لوني للأجزاء المحددة */
+}
+.article-description {
+    font-size: 16px;
+    color: #ecf0f1;
+    margin-bottom: 10px;
+}
+
+.article-date {
+    font-size: 13px;
+    color: #bdc3c7;
+    text-align: right;
+}
+
+/* إضافة تنسيق لعرض التفاصيل */
+.article-full-content {
+    display: none;
+    font-size: 16px;
+    color: #ecf0f1;
+    margin-top: 15px;
+    text-align: right;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* تنسيق الزر */
+.read-more {
+    background-color: #6a0dad;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease; /* حركة انتقالية سلسة */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* ظل خارجي */
+}
+
+.read-more:hover {
+    background-color: #8e44ad;
+    transform: scale(1.09);
+}
+
+/* النموذج الخاص بالتقديم */
+.application-form-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* تأثير الخلفية الداكنة */
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+}
+
+.application-form {
+    background: linear-gradient(#02ffab,#02d9ff);
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.3s ease-in-out;;
+}
+.application-form h2 {
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+    animation: glow 2s infinite alternate; /* تأثير الإشعاع */
+    transform: translateY(0); /* الموقع الابتدائي */
+    transition: transform 0.3s ease; /* تأثير الحركة عند التفاعل */
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    text-align: left; /* محاذاة النص إلى اليمين */
+    direction: ltr; /* تعيين الاتجاه من اليمين لليسار */
+}
+textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.6);
+}
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.form-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease
+}
+button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+}
+button[type="submit"]:hover {
+    background-color: #118bdd;
+    transform: scale(1.1);
+}
+button[type="button"] {
+    background-color: #e74c3c;
+    color: white;
+}
+button[type="button"]:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+#submitButton:focus, #cancelButton:focus {
+    outline: none;
+}
+#submitButton, #cancelButton {
+    min-width: 120px;
+}
+/* تحسين الظهور على الشاشات الصغيرة */
+@media screen and (max-width: 600px) {
+    .articles-container {
+        grid-template-columns: 1fr; /* مقال واحد لكل صف */
+    }
+
+    .application-form {
+        width: 90%;
+    }
+}
+
+/* رسالة النجاح */
+.success-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.success-message.show {
+    opacity: 1;
+    visibility: visible;
+}
+.apply-button {
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* ظل خارجي */
+    transition: all 0.2s ease; /* حركة انتقالية سلسة */
+}
+
+.apply-button:hover {
+    background-color: #2ecc71;
+    transform: scale(1.1);
+}
+.logo {
+    margin-top: 0px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out; /* تأثير الظهور التدريجي */
+}
+
+.logo img {
+    max-width: 240px; /* حجم الصورة */
+    width: 100%; /* دعم استجابة الصورة */
+    height: auto;
+    border: none; /* إزالة الحدود */
+    border-radius: 0; /* إزالة الزوايا المستديرة */
+    background: none; /* إزالة أي خلفية */
+    box-shadow: none; /* إزالة التوهج */
+    animation: fadeIn 2s ease-in-out; /* تأثير ظهور تدريجي */
+    transition: transform 0.3s ease; /* تأثير تكبير عند التمرير */
+}
+
+.logo img:hover {
+    transform: scale(1.05); /* تكبير بسيط عند التمرير */
+}
+

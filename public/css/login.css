@@ -1,0 +1,148 @@
+/* تنسيق صفحة تسجيل الدخول */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a201ff, #0206ff);
+    animation: backgroundAnimation 5s ease-in-out infinite;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* صفحة تسجيل الدخول */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+/* تنسيق كلمة Jobify */
+.branding {
+    margin-top: 0px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out; /* تأثير الظهور التدريجي */
+}
+
+.branding img {
+    max-width: 200px; /* حجم الصورة */
+    width: 100%; /* دعم استجابة الصورة */
+    height: auto;
+    border: none; /* إزالة الحدود */
+    border-radius: 0; /* إزالة الزوايا المستديرة */
+    background: none; /* إزالة أي خلفية */
+    box-shadow: none; /* إزالة التوهج */
+    animation: fadeIn 2s ease-in-out; /* تأثير ظهور تدريجي */
+    transition: transform 0.3s ease; /* تأثير تكبير عند التمرير */
+}
+
+.branding img:hover {
+    transform: scale(1.05); /* تكبير بسيط عند التمرير */
+}
+
+/* إلغاء الإشعاع */
+@keyframes glowing {
+    0%, 100% {
+        box-shadow: none;
+    }
+}
+/* تحسين العرض على الشاشات الصغيرة */
+@media screen and (max-width: 600px) {
+    .branding h2 {
+        font-size: 2rem; /* تقليل حجم الخط للشاشات الصغيرة */
+    }
+}
+
+
+input[type="text"], input[type="password"] {
+    width: 90%; /* عرض الحقل بالنسبة إلى الحاوية */
+    padding: 12px 20px; /* مساحة داخلية مريحة */
+    margin: 15px 0; /* مسافة بين الحقول */
+    border: none; /* إزالة الإطار الافتراضي */
+    border-radius: 25px; /* زوايا مستديرة */
+    font-size: 16px; /* حجم الخط */
+    font-weight: bold; /* خط عريض */
+    color: #333; /* لون النص */
+    background: rgba(255, 255, 255, 0.8); /* خلفية شفافة */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خارجي خفيف */
+    transition: all 0.3s ease; /* حركة انتقالية سلسة */
+    animation: fadeIn 2s ease-in-out;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none; /* إزالة إطار التركيز الافتراضي */
+    background: rgba(255, 255, 255, 1); /* زيادة وضوح الخلفية */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* ظل أكثر وضوحًا */
+    transform: scale(1.05); /* تكبير الحقل قليلاً */
+    border: 2px solid #6200ff; /* إضافة حدود ملونة */
+    animation: fadeIn 2s ease-in-out;
+}
+
+button {
+    background: linear-gradient(135deg, #4CAF50, #2ecc71); /* تدرج ألوان أنيق */
+    border: none;
+    color: white;
+    padding: 15px 30px; /* حجم الزر */
+    border-radius: 50px; /* زوايا مستديرة */
+    font-size: 18px;
+    font-weight: bold; /* خط عريض */
+    text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* ظل خارجي */
+    transition: all 0.3s ease; /* حركة انتقالية سلسة */
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+.login-container h1 {
+    font-size: 2.8rem; /* حجم خط كبير وواضح */
+    font-weight: bold; /* الخط عريض */
+    color: #000000; /* اللون أبيض */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), 
+                 0 0 15px #a201ff, 
+                 0 0 25px #0206ff; /* تأثيرات مشعة */
+    margin-bottom: 20px;
+    letter-spacing: 2px; /* تباعد بين الأحرف */
+    animation: glow 2s infinite alternate; /* تأثير الإشعاع */
+    transform: translateY(0); /* الموقع الابتدائي */
+    transition: transform 0.3s ease; /* تأثير الحركة عند التفاعل */
+    animation: fadeIn 2s ease-in-out;
+}
+
+.login-container h1:hover {
+    transform: translateY(-10px); /* رفع بسيط عند التمرير */
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7), 
+                 0 0 25px #a201ff, 
+                 0 0 35px #0206ff; /* زيادة الإشعاع */
+}
+
+/* تأثير الإشعاع */
+@keyframes glow {
+    0% {
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), 
+                     0 0 10px #a201ff, 
+                     0 0 20px #0206ff;
+    }
+    100% {
+        text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7), 
+                     0 0 25px #a201ff, 
+                     0 0 35px #0206ff;
+    }
+}
